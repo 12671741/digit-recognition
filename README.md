@@ -1,3 +1,3 @@
-run command:
-python test.py
+run command:\n
+python test.py\n
 python ct.py
