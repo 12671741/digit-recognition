@@ -27,7 +27,7 @@ syn2 = 2*np.random.random((15,10)) - 1
 ker=np.ones((3,3))/9
 
 augment=np.ones((batch_size,1))
-err=[]
+
 for j in range(60):
     total_batch = int(mnist.train.num_examples/batch_size)
 
@@ -41,7 +41,6 @@ for j in range(60):
 
              # Back propagation of errors using the chain rule.
             l3_error = batch_ys - l3
-            err.append(l3_error)
 
             l3_delta = l3_error*nonlin(l3, deriv=True)#(batch_ys - l2)*(l2*(1-l2))
             l2_error = l3_delta.dot(syn2.T)
